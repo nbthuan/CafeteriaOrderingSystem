@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="edu.sundevil.cafeteria.OperatorController">
+    <top>
+        <VBox spacing="10.0" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <ImageView fitWidth="150" fitHeight="150">
+                <image>
+                    <Image url="@img/operator.png"/>
+                </image>
+            </ImageView>
+
+            <Label text="Operator - Manage Orders" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Filter by Status:"/>
+                <ComboBox fx:id="statusFilterBox" onAction="#handleFilterChange" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="orderTable">
+            <columns>
+                <TableColumn fx:id="customerCol" text="Customer" prefWidth="150"/>
+                <TableColumn fx:id="itemCol" text="Item" prefWidth="150"/>
+                <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="timeCol" text="Timestamp" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Mark as Ready" onAction="#handleMarkReady" />
+            <Label fx:id="messageLabel" textFill="green" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="edu.sundevil.cafeteria.MenuController">
+
+    <top>
+        <VBox spacing="10.0" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Icon Image -->
+            <ImageView fitWidth="150" fitHeight="150">
+                <image>
+                    <Image url="@img/menu.png"/>
+                </image>
+            </ImageView>
+
+            <Label text="Menu Manager" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+            <TextField fx:id="menuField" promptText="Menu" />
+            <TextField fx:id="nameField" promptText="Name" />
+            <TextField fx:id="descField" promptText="Description" />
+
+            <!-- Button Group -->
+            <HBox spacing="10.0" alignment="CENTER">
+                <Button fx:id="addButton" text="Add Item" onAction="#onAddItem" />
+                <Button fx:id="updateButton" text="Update" onAction="#onUpdateItem" />
+                <Button fx:id="deleteButton" text="Delete" onAction="#onDeleteItem" />
+                <Button fx:id="clearButton" text="Clear" onAction="#onClearFields" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn fx:id="menuCol" text="Menu" prefWidth="150"/>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="descCol" text="Description" prefWidth="400"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

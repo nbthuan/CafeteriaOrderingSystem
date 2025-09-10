@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="edu.sundevil.cafeteria.LoginController">
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <ImageView fitHeight="150" fitWidth="150">
+                <image>
+                    <Image url="@img/login_icon.png"/>
+                </image>
+            </ImageView>
+            <Label text="Login" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <TextField fx:id="usernameField" promptText="Username" prefWidth="300"/>
+            <PasswordField fx:id="passwordField" promptText="Password" prefWidth="300"/>
+            <Button text="Login" onAction="#handleLogin" prefWidth="200"/>
+        </VBox>
+    </center>
+</BorderPane>

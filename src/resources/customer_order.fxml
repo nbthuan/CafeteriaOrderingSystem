@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="edu.sundevil.cafeteria.CustomerOrderController">
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Image at the top -->
+            <ImageView fitWidth="150" fitHeight="150">
+                <image>
+                    <Image url="@img/order.png" />
+                </image>
+            </ImageView>
+
+            <Label text="Place Your Order" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <TextField fx:id="customerField" promptText="Your Name" />
+
+            <HBox alignment="CENTER_LEFT">
+                <ComboBox fx:id="menuBox" promptText="Select Menu" />
+            </HBox>
+
+            <!-- Multi-select ListView for items -->
+            <ListView fx:id="itemListView" prefHeight="120.0" />
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="Submit Order" onAction="#handleSubmitOrder"/>
+                <Label fx:id="statusLabel" textFill="green"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="orderTable">
+            <columns>
+                <TableColumn fx:id="customerCol" text="Customer" prefWidth="200"/>
+                <TableColumn fx:id="itemCol" text="Item" prefWidth="200"/>
+                <TableColumn fx:id="statusCol" text="Status" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
